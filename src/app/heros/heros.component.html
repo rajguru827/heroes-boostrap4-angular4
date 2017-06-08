@@ -1,0 +1,48 @@
+<!--<h6 class="card-subtitle mb-2 text-muted">My Heroes</h6>
+<hr />
+<ul class="heroes list-inline">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.text-primary]="hero === selectedHero">
+        <span class="badge badge-default">{{hero.id}}</span> {{hero.name}}
+    </li>
+</ul>-->
+
+<div class="row mt-4">
+    <div class="offset-md-3 col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">My Heroes</h5>
+            </div>
+            <div class="card-block">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hero of heroes">
+                                <td>{{hero.id}}</td>
+                                <td>{{hero.name}}</td>
+                                <td>
+                                    <a [routerLink]="['/detail', hero.id]">Edit</a> | 
+                                    <a href="javascript:;" (click)="delete(hero); $event.stopPropagation()">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <form class="form-inline">
+                    <div class="form-group mr-sm-2">
+                        <label for="inputPassword2" class="sr-only">Hero Name</label>
+                        <input #heroName type="text" class="form-control" id="inputPassword2" placeholder="Hero Name">
+                    </div>
+                    <button type="submit" class="btn btn-primary" (click)="add(heroName.value); heroName.value=''">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

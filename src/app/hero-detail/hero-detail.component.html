@@ -1,0 +1,33 @@
+
+
+<div class="row mt-4">
+    <div class="offset-md-4 col-md-4">
+        <div class="hero-details" *ngIf="hero">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">
+                        {{hero.name}} details
+                    </h5>
+                </div>
+                <div class="card-block">
+                    <div class="form-group">
+                        <label class="form-control-label">ID:</label>
+                        <input class="form-control" [(ngModel)]="hero.id" placeholder="ID" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label">Name:</label>
+                        <input class="form-control" [(ngModel)]="hero.name" placeholder="name" />
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary" type="button" (click)="save()">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="goBack()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<h6 class="card-subtitle mb-2 text-muted"></h6>
+<hr />
+<div><label>id: </label>{{hero.id}}</div>-->

@@ -1,0 +1,21 @@
+.bd-search {
+    position: relative;
+}
+
+.bd-search-results {
+    right: 0;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    font-size: .9rem;
+}
+.bd-search-results .dropdown-item:first-child {
+    margin-top: .25rem;
+}
+.bd-search-results .dropdown-item {
+    padding-right: .75rem;
+    padding-left: .75rem;
+}
+.bd-search-results:empty {
+    display: none;
+}

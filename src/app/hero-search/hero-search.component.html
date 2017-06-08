@@ -1,0 +1,22 @@
+<!--<form class="bd-search hidden-sm-down">
+    <label>Search Heroes</label>
+    <input type="text" class="form-control" id="search-input" placeholder="Search..." autocomplete="off" #searchBox (keyup)="search(searchBox.value)" >
+    <div class="dropdown-menu bd-search-results" id="search-results" >
+        <a href="javascript:;" class="dropdown-item" *ngFor="let hero of heroes | async" (click)="gotoDetail(hero)">{{hero.name}}</a>
+    </div>
+</form>-->
+
+<form class="form-inline my-2 my-lg-0 bd-search">
+    <input type="text" class="form-control mr-sm-2" id="search-input" placeholder="Search Heroes..." autocomplete="off" #searchBox (keyup)="search(searchBox.value)">
+    <div *ngIf="heroes|async;let heroesItems">
+        <div class="dropdown-menu bd-search-results" id="search-results"  *ngIf="heroesItems.length > 0">        
+            <a href="javascript:;" class="dropdown-item" *ngFor="let hero of heroesItems" (click)="gotoDetail(hero)">{{hero.name}}</a>
+        </div>
+    </div>
+</form>
+
+<!--<ng-container *ngIf="heroes|async;let heroesItems">
+    <ul class="custom-dropdown" *ngIf="heroesItems.length > 0">
+        <li *ngFor="let hero of heroesItems">{{hero.name}}</li>
+    </ul>
+</ng-container>-->
